@@ -1,3 +1,4 @@
+
 package com.laundry.laundryMgmt.records;
 
 import com.laundry.laundryMgmt.models.CycleType;

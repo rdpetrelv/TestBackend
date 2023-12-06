@@ -1,3 +1,4 @@
+
 package com.laundry.laundryMgmt.dao;
 
 import com.laundry.laundryMgmt.models.MachineEntity;
@@ -10,3 +11,4 @@ public interface MachineDao extends JpaRepository<MachineEntity, Long> {
 
 
 }
+
