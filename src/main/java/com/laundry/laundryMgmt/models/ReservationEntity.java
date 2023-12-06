@@ -1,9 +1,6 @@
 package com.laundry.laundryMgmt.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalTime;
 @Entity
@@ -18,5 +15,9 @@ public class ReservationEntity {
 
     @Column
     private LocalTime ReservationTimeto;
+
+
+    @ManyToOne
+    private MachineEntity machine;
 
 }

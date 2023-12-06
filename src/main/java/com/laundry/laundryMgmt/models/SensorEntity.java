@@ -16,4 +16,8 @@ public class SensorEntity {
     @Enumerated(EnumType.STRING)
     private SensorType sensorType;
 
+
+    @ManyToOne
+    private MachineEntity machine;
+
 }

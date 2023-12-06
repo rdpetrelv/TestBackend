@@ -6,12 +6,12 @@ import java.time.LocalTime;
 import java.util.Set;
 
 @Entity
-@Table(name = "MACHINE")
+@Table(name = "MACHINE_ENTITY")
 public class MachineEntity {
 
     @Id
     @GeneratedValue
-    public long Machineid;
+    public long machineId;
 
     @Column(nullable = false, length = 255)
     private String name;
@@ -32,10 +32,10 @@ public class MachineEntity {
     @Column
     private LocalTime StartingTime;
 
-    @OneToMany
+    @OneToMany(mappedBy = "machine")
     private Set<ReservationEntity> reservationEntitySet = Set.of();
 
-    @OneToMany
+    @OneToMany(mappedBy = "machine")
     private Set<SensorEntity> sensorEntitySet = Set.of();
 
 
