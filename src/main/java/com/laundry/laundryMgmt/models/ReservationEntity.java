@@ -19,7 +19,7 @@ public class ReservationEntity {
     @Column(name = "reservationStart_hour")
     private Date ReservationTimeFrom;
 
-    @Column(name = "reservationEnd_hour")
+    @Column(name = "reservationEnd")
     private Date ReservationTimeto;
 
     @ManyToOne
