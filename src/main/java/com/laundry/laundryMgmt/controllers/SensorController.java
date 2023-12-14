@@ -6,7 +6,10 @@ import com.laundry.laundryMgmt.records.SensorRecord;
 import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.laundry.laundryMgmt.models.SensorType;
 
+
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,26 +32,26 @@ public class SensorController {
                 .sorted(Comparator.comparing(SensorEntity::getSensorName))
                 .collect(Collectors.toList());
     }
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/by-id/{id}")
     public SensorEntity findById(@PathVariable Long id) {
         return sensorDao.findById(id).orElse(null);
     }
 
     @PostMapping
     public ResponseEntity<SensorEntity> create(@RequestBody SensorRecord sensor) {
-        SensorEntity sensorEntity = new SensorEntity(sensor.sensorType(), sensor.name());
+        SensorEntity sensorEntity = new SensorEntity(sensor.sensorType(), sensor.name(), sensor.status());
         SensorEntity saved = sensorDao.save(sensorEntity);
         return ResponseEntity.ok(saved);
     }
 
-    @PutMapping(path = "/{id}")
-    public ResponseEntity<SensorEntity> update(@PathVariable Long id, @RequestBody SensorEntity sensor) {
+    @PutMapping(path = "/{id}/status")
+    public ResponseEntity<SensorEntity> update(@PathVariable Long id) {
         SensorEntity existingSensor = sensorDao.findById(id).orElse(null);
         if (existingSensor == null) {
             return ResponseEntity.badRequest().build();
         }
-        existingSensor.setMeasure(sensor.getMeasure());
-        existingSensor.setSensorType(sensor.getSensorType());
+
+        existingSensor.setStatus(!existingSensor.getStatus());
         SensorEntity updatedSensor = sensorDao.save(existingSensor);
         return ResponseEntity.ok(updatedSensor);
     }
@@ -56,5 +59,13 @@ public class SensorController {
     public void delete(@PathVariable Long id) {
         sensorDao.deleteById(id);
     }
+
+
+    @GetMapping("/types")
+    public List<SensorType> findAllSensorTypes() {
+        return Arrays.asList(SensorType.values());
+    }
+
+
 
 }

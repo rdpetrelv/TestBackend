@@ -9,7 +9,8 @@ public class SensorMapper {
                 sensor.getSensorId(),
                 sensor.getSensorName(),
                 sensor.getMeasure(),
-                sensor.getSensorType()
+                sensor.getSensorType(),
+                sensor.getStatus()
         );
     }
 }
