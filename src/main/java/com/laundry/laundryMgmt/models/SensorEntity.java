@@ -1,3 +1,4 @@
+
 package com.laundry.laundryMgmt.models;
 import jakarta.persistence.*;
 
