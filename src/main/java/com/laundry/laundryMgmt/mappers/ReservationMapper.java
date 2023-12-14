@@ -6,10 +6,12 @@ import com.laundry.laundryMgmt.records.ReservationRecord;
 public class ReservationMapper {
     public static ReservationRecord of (ReservationEntity reservation){
         return new ReservationRecord(
-                reservation.getReservationId(),
-                reservation.getReservationDate(),
-                reservation.getReservationTimeFrom(),
-                reservation.getReservationTimeto()
-        );
+                        reservation.getReservationId(),
+                        reservation.getReservationUser(),
+                        reservation.getReservationDate(),
+                        reservation.getReservationStartTime(),
+                        reservation.getReservationEndTime(),
+                        reservation.getReservationAvailable()
+                );
     }
 }

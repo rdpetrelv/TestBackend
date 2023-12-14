@@ -5,7 +5,6 @@ import com.laundry.laundryMgmt.mappers.ReservationMapper;
 import com.laundry.laundryMgmt.models.ReservationEntity;
 import com.laundry.laundryMgmt.records.ReservationCommand;
 import com.laundry.laundryMgmt.records.ReservationRecord;
-import jakarta.persistence.Id;
 import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,35 +24,49 @@ public class ReservationController {
     public ReservationController( ReservationDao reservationDao){
         this.reservationDao = reservationDao;
     }
-    @GetMapping
+
+    @GetMapping  //Busca todas las reservas y las ordena segun la ID
     public List<ReservationRecord> findAll() {
         return reservationDao.findAll()
                 .stream()
                 .map(ReservationMapper::of)
-                .sorted(Comparator.comparing(ReservationRecord::Id))
+                .sorted(Comparator.comparing(ReservationRecord::reservationId))
                 .collect(Collectors.toList());
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/{id}") // Busca una reserva especifica por el Id
     public ReservationRecord findById(@PathVariable Long id) {
         return reservationDao.findById(id).map(ReservationMapper::of).orElse(null);
     }
 
-    @PostMapping
+    @PostMapping //Crea la reserva
     public ResponseEntity<ReservationRecord> create(@RequestBody ReservationCommand reservation) {
-        ReservationEntity entity = new ReservationEntity(reservation.Id(), reservation.reservationDate() );
+        ReservationEntity entity = new ReservationEntity(reservation.reservationUser(), reservation.reservationDate(),
+                                    reservation.reservationStartTime(), reservation.reservationEndTime());
         ReservationEntity saved = reservationDao.save(entity);
+
+        if (reservation.reservationUser() != null &&
+                reservation.reservationDate() != null &&
+                reservation.reservationStartTime() != null &&
+                reservation.reservationEndTime() != null) {
+            // Establecer reservationAvailable como true
+            entity.setReservationAvailable(true);
+        }
+        else
+            entity.setReservationAvailable(false);
+
         return ResponseEntity.ok(ReservationMapper.of(saved));
     }
 
-    @PutMapping(path = "/{id}")
+    @PutMapping(path = "/{id}") // Editar
     public ResponseEntity<ReservationRecord> update(@PathVariable Long id, @RequestBody ReservationCommand reservationCommand) {
         ReservationEntity entity = reservationDao.findById(id).orElse(null);
         if (entity == null) {
             return ResponseEntity.badRequest().build();
         }
         entity.setReservationDate(reservationCommand.reservationDate());
-        entity.setReservationTimeFrom(reservationCommand.reservationTimeFrom());
+        entity.setReservationStartTime(reservationCommand.reservationStartTime());
+        entity.setReservationEndTime(reservationCommand.reservationEndTime());
 
         return ResponseEntity.ok(ReservationMapper.of(entity));
     }

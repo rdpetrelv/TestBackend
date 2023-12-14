@@ -1,7 +1,9 @@
 package com.laundry.laundryMgmt.records;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
-public record ReservationCommand(Long Id, Date reservationDate, Date reservationTimeFrom, Date reservationTimeto ) {
+public record ReservationCommand(Long reservationId, String reservationUser, LocalDate reservationDate,
+                                 LocalTime reservationStartTime, LocalTime reservationEndTime, Boolean reservationAvailable) {
+
 }

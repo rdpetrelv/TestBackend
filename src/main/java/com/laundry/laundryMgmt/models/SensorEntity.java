@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 package com.laundry.laundryMgmt.models;
-
 import jakarta.persistence.*;
 
-=======
-package com.laundry.laundryMgmt.models;
-
-import jakarta.persistence.*;
 
 @Entity
 public class SensorEntity {
@@ -83,4 +77,3 @@ public class SensorEntity {
     }
 
 }
->>>>>>> dd771218911cba773fa6dc18761bfeb87c0ef0e0
