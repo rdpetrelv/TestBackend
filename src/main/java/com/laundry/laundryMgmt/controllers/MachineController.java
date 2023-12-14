@@ -45,15 +45,26 @@ public class MachineController {
         return ResponseEntity.ok(MachineMapper.of(machineSaved));
     }
 
-    @PutMapping(path = "/{id}")
-    public ResponseEntity<MachineRecord> updateStatus(@PathVariable Long id, @RequestBody MachineCommand machineCommand) {
+//    @PutMapping(path = "/{id}")
+//    public ResponseEntity<MachineRecord> updateStatus(@PathVariable Long id, @RequestBody MachineCommand machineCommand) {
+//        MachineEntity machineEntity =machineDao.findById(id).orElse(null);
+//        if (machineEntity == null){
+//            return ResponseEntity.badRequest().build();
+//        }
+//        machineEntity.setMachineStatus(machineCommand.machineStatus());
+//        return ResponseEntity.ok(MachineMapper.of(machineEntity));
+//    }
+
+    @PutMapping(path = "/updateAvailable/{id}")
+    public ResponseEntity<MachineRecord> updateStatus(@PathVariable Long id) {
         MachineEntity machineEntity =machineDao.findById(id).orElse(null);
         if (machineEntity == null){
             return ResponseEntity.badRequest().build();
         }
-        machineEntity.setMachineStatus(machineCommand.machineStatus());
+        machineEntity.setAvailable(!machineEntity.isAvailable());
         return ResponseEntity.ok(MachineMapper.of(machineEntity));
     }
+
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id){
         machineDao.deleteById(id);
