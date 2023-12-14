@@ -13,8 +13,12 @@ public class SensorEntity {
     @Column
     public String sensorName;
 
+
     @Column
     private int Measure;
+
+    @Column
+    private boolean status;
 
     @Column
     @Enumerated(EnumType.STRING)
@@ -26,9 +30,10 @@ public class SensorEntity {
     // Constructor
     public SensorEntity() {
     }
-    public SensorEntity(SensorType sensorType, String name) { // (9).
+    public SensorEntity(SensorType sensorType, String name, boolean status) { // (9).
         this.sensorName = name;
         this.sensorType = sensorType;
+        this.status=status;
     }
 
     // Getter and setter for sensorId
@@ -75,6 +80,17 @@ public class SensorEntity {
 
     public void setMachine(MachineEntity machine) {
         this.machine = machine;
+    }
+
+
+    // Getter and setter for status
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
 }
