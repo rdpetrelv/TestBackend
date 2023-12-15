@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin
+
+@CrossOrigin(origins = { "http://localhost:5173" }, maxAge = 3600)
 @RestController
 @RequestMapping("/api/machines")
 @Transactional
+
 public class MachineController {
     private final MachineDao machineDao;
 

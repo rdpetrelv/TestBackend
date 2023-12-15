@@ -13,8 +13,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin
+
+@CrossOrigin(origins = { "http://localhost:5173" }, maxAge = 3600)
 @RestController // (1)
 @RequestMapping("/api/sensors") // (2)
 @Transactional // (3)
