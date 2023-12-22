@@ -11,6 +11,10 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
+
+
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -35,6 +39,9 @@ public class SpringSecurityConfig {
         http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
         return http.build();
     }
 }

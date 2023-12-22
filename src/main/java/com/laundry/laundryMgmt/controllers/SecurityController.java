@@ -18,4 +18,5 @@ public class SecurityController {
     public User findUserName(@AuthenticationPrincipal UserDetails userDetails) {
         return new User(userDetails.getUsername());
     }
+
 }

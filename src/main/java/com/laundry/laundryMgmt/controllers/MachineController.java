@@ -73,5 +73,7 @@ public class MachineController {
         machineDao.deleteById(id);
     }
 
+
+
 }
 
