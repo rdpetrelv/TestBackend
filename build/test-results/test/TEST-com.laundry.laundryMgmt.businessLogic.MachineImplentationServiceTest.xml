@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-28T13:58:15" hostname="DESKTOP-35ABBQB" time="0.124">
+  <properties/>
+  <testcase name="timeTest(CapturedOutput)" classname="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" time="0.124"/>
+  <system-out><![CDATA[Output time is 15
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
