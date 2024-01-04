@@ -1,8 +1,6 @@
 package com.laundry.laundryMgmt.models;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -31,7 +29,6 @@ public class ReservationEntity {
     @JsonFormat(pattern="HH:mm:ss")
     private LocalTime reservationEndTime;
 
-
     @ManyToOne
     private MachineEntity machine;
 
@@ -45,7 +42,6 @@ public class ReservationEntity {
     public ReservationEntity() {
         // Constructor vacio requerido
     }
-
 
     public long getReservationId() {
         return reservationId;

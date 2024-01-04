@@ -2,6 +2,8 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.1.5"
 	id("io.spring.dependency-management") version "1.1.3"
+	checkstyle
+	id("org.kordamp.gradle.errorprone") version "0.54.0"
 }
 
 group = "com.laundry"
@@ -36,6 +38,10 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	implementation("org.apache.logging.log4j:log4j-api:2.22.1")
 	implementation("org.apache.logging.log4j:log4j-core:2.22.1")
+	implementation("org.apache.httpcomponents:httpclient:4.5")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+	//errorprone("com.google.errorprone:error_prone_core:2.3.3")
 }
 
 tasks.withType<Test> {
@@ -45,4 +51,3 @@ tasks.withType<Test> {
 tasks.bootBuildImage {
 	builder.set("paketobuildpacks/builder-jammy-base:latest")
 }
-

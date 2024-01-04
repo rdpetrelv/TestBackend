@@ -1,3 +1,7 @@
+// © 2024 Laundary Management
+// This file is under the MIT License.
+// See the LICENSE file at the root of the project for more details.
+
 package com.laundry.laundryMgmt.config;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;

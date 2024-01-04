@@ -6,6 +6,4 @@
   "deploy": {
     "jarName": "./build/libs/laundryMgmt-0.0.1-SNAPSHOT.jar"
   }
-
-
 }
