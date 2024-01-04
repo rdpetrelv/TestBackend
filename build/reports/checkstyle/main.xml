@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\businessLogic\MachineImplementationService.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\businessLogic\MachineService.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\businessLogic\MachinesServices.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\businessLogic\MachinesServicesImplementation.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\config\SpringSecurityConfig.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\controllers\MachineController.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\controllers\ReservationController.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\controllers\SecurityController.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\controllers\SensorController.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\dao\MachineDao.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\dao\ReservationDao.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\dao\SensorDao.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\LaundryMgmtApplication.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\LaundryMgmtApplicationConfig.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\mappers\MachineMapper.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\mappers\ReservationMapper.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\mappers\SensorMapper.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\models\CycleType.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\models\MachineEntity.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\models\ReservationEntity.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\models\SensorEntity.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\models\SensorType.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\records\MachineCommand.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\records\MachineRecord.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\records\ReservationCommand.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\records\ReservationRecord.java">
+</file>
+<file name="C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\src\main\java\com\laundry\laundryMgmt\records\SensorRecord.java">
+</file>
+</checkstyle>
