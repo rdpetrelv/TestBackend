@@ -1,12 +1,24 @@
 package com.laundry.laundryMgmt.models;
 
 /**
- *  Main class that starts the laundry management application.
- *
- * @author David PETREL
+ * @author  David PETREL
  * @version 1.0
- * @since 2023-11-16
+ *
+ * Represents the types of sensors used in the laundry management system.
  */
 public enum SensorType {
-    TEMPERATURE, MOVEMENT, TIMER
+    /**
+     * Sensor type for temperature measurement.
+     */
+    TEMPERATURE,
+
+    /**
+     * Sensor type for movement detection.
+     */
+    MOVEMENT,
+
+    /**
+     * Sensor type for timer functionality.
+     */
+    TIMER
 }

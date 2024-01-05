@@ -48,6 +48,21 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
+tasks.register("generateJavadoc", Javadoc::class) {
+	source = sourceSets["main"].allJava
+	classpath = configurations["runtimeClasspath"]
+	destinationDir = file("build/docs/javadoc")
+	(options as StandardJavadocDocletOptions).apply {
+		setMemberLevel(JavadocMemberLevel.PUBLIC)
+		isAuthor = true
+		isVersion = true
+	}
+}
+
+tasks.named<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
+	builder = "paketobuildpacks/builder-jammy-base:latest"
+}
+
 tasks.bootBuildImage {
 	builder.set("paketobuildpacks/builder-jammy-base:latest")
 }

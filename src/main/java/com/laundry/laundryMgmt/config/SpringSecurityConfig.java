@@ -22,14 +22,25 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+/**
+ * @author  Fatima GHAOUI
+ * Configuration class responsible for setting up Spring Security configurations.
+ */
 @Configuration
 public class SpringSecurityConfig {
 
+    /**
+     * Constant representing the role 'USER'.
+     */
     public static final String ROLE_USER = "USER";
 
+    /**
+     * Creates and configures a UserDetailsService for handling user details.
+     *
+     * @return A UserDetailsService with an in-memory user 'user' having a password 'myPassword' and role 'USER'.
+     */
     @Bean
     public UserDetailsService userDetailsService() {
-        // We create a password encoder
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(
@@ -37,6 +48,14 @@ public class SpringSecurityConfig {
         );
         return manager;
     }
+
+    /**
+     * Configures the default security filter chain using HttpSecurity.
+     *
+     * @param http HttpSecurity instance to configure security settings.
+     * @return A SecurityFilterChain configured with authentication for all requests and default login options.
+     * @throws Exception If there's an issue while configuring security settings.
+     */
     @Bean
     @Order(SecurityProperties.BASIC_AUTH_ORDER)
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
