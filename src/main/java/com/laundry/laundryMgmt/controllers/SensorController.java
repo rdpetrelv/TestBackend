@@ -68,7 +68,7 @@ public class SensorController {
      */
     @PostMapping
     public ResponseEntity<SensorEntity> create(@RequestBody SensorRecord sensor) {
-        SensorEntity sensorEntity = new SensorEntity(sensor.sensorType(), sensor.name(), sensor.status());
+        SensorEntity sensorEntity = new SensorEntity(sensor.sensorType(), sensor.name(), sensor.status(), sensor.measure());
         SensorEntity saved = sensorDao.save(sensorEntity);
         return ResponseEntity.ok(saved);
     }
@@ -87,6 +87,25 @@ public class SensorController {
         }
 
         existingSensor.setStatus(!existingSensor.getStatus());
+        SensorEntity updatedSensor = sensorDao.save(existingSensor);
+        return ResponseEntity.ok(updatedSensor);
+    }
+
+    /**
+     * Updates the measure of a sensor by its ID.
+     *
+     * @param id The ID of the sensor to update.
+     * @return The ResponseEntity containing the updated SensorEntity object if successful, otherwise a bad request.
+     */
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<SensorEntity> updateMeasure(@PathVariable Long id, @RequestBody SensorRecord sensor) {
+        SensorEntity existingSensor = sensorDao.findById(id).orElse(null);
+        SensorEntity sensorEntity = new SensorEntity(sensor.sensorType(), sensor.name(), sensor.status(), sensor.measure());
+        if (existingSensor == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        existingSensor.setMeasure(sensorEntity.getMeasure());
         SensorEntity updatedSensor = sensorDao.save(existingSensor);
         return ResponseEntity.ok(updatedSensor);
     }

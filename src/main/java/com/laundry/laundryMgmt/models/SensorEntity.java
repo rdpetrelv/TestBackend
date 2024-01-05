@@ -51,6 +51,21 @@ public class SensorEntity {
     }
 
     /**
+     * Constructor with parameters for SensorEntity.
+     *
+     * @param sensorType The type of sensor.
+     * @param name       The name of the sensor.
+     * @param status     The status of the sensor.
+     * @param measure    the measure ofthe sensor.
+     */
+    public SensorEntity(SensorType sensorType, String name, boolean status, int measure) { // (9).
+        this.sensorName = name;
+        this.sensorType = sensorType;
+        this.status=status;
+        this.Measure = measure;
+    }
+
+    /**
      * Gets the sensor ID.
      *
      * @return The sensor ID.
