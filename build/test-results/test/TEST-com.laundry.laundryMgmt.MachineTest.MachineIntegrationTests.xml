@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-01-05T13:01:32" hostname="DESKTOP-35ABBQB" time="1.405">
+  <properties/>
+  <testcase name="givenMachineByIdAccessed_whenMachineInfoRetrieved_then200IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.679"/>
+  <testcase name="givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.369"/>
+  <testcase name="givenPath_whenAccessedWithoutAuthentication_then401IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.04"/>
+  <testcase name="givenMachineExists_whenMachineIsRetrieved_thenRetrievedResourceIsCorrect()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.312"/>
+  <system-out><![CDATA[14:01:33.107 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:01:33.127 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:01:33.129 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+14:01:33.162 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.166 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
+14:01:33.176 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+14:01:33.180 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51406<->127.0.0.1:8080
+14:01:33.181 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-500 HTTP/1.1
+14:01:33.181 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> GET /api/machines/-500 HTTP/1.1
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost:8080
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
+14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+14:01:33.185 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET /api/machines/-500 HTTP/1.1[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+14:01:33.336 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Origin[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Access-Control-Request-Method[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Access-Control-Request-Headers[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-XSS-Protection: 0[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Expires: 0[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 0[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Keep-Alive: timeout=60[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 
+14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Origin
+14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Access-Control-Request-Method
+14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Access-Control-Request-Headers
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-XSS-Protection: 0
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Pragma: no-cache
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Expires: 0
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 0
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Fri, 05 Jan 2024 13:01:33 GMT
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Keep-Alive: timeout=60
+14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+14:01:33.352 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
+14:01:33.353 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
+14:01:33.353 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.367 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:01:33.367 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.367 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
+14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+14:01:33.368 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51407<->127.0.0.1:8080
+14:01:33.368 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines HTTP/1.1
+14:01:33.368 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> GET /api/machines HTTP/1.1
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: localhost:8080
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
+14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "GET /api/machines HTTP/1.1[\r][\n]"
+14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
+14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
+14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Origin[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Access-Control-Request-Method[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Access-Control-Request-Headers[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Content-Type-Options: nosniff[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-XSS-Protection: 0[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Pragma: no-cache[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Expires: 0[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Transfer-Encoding: chunked[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
+14:01:33.729 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "83[\r][\n]"
+14:01:33.729 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[{"machineId":-2,"name":"TEST MACHINE","available":false,"machineStatus":false,"progress":40,"cycleType":null,"startingTime":null}][\r][\n]"
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 200 
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Origin
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Access-Control-Request-Method
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Access-Control-Request-Headers
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Content-Type-Options: nosniff
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-XSS-Protection: 0
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Pragma: no-cache
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Expires: 0
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: application/json
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Transfer-Encoding: chunked
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Fri, 05 Jan 2024 13:01:33 GMT
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Keep-Alive: timeout=60
+14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Connection: keep-alive
+14:01:33.731 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
+14:01:33.742 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:01:33.742 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:01:33.742 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+14:01:33.743 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.743 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
+14:01:33.743 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+14:01:33.744 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51409<->127.0.0.1:8080
+14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-500 HTTP/1.1
+14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> GET /api/machines/-500 HTTP/1.1
+14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Host: localhost:8080
+14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Connection: Keep-Alive
+14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
+14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept-Encoding: gzip,deflate
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "GET /api/machines/-500 HTTP/1.1[\r][\n]"
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Host: localhost:8080[\r][\n]"
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Connection: Keep-Alive[\r][\n]"
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "[\r][\n]"
+14:01:33.763 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "HTTP/1.1 401 [\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Set-Cookie: JSESSIONID=8079E6EBDEB9872F135AB8D8C40ED361; Path=/; HttpOnly[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "WWW-Authenticate: Basic realm="Realm"[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Content-Type-Options: nosniff[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "X-XSS-Protection: 0[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Pragma: no-cache[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Expires: 0[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Length: 0[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Keep-Alive: timeout=60[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Connection: keep-alive[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << HTTP/1.1 401 
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Set-Cookie: JSESSIONID=8079E6EBDEB9872F135AB8D8C40ED361; Path=/; HttpOnly
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << WWW-Authenticate: Basic realm="Realm"
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << X-Content-Type-Options: nosniff
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << X-XSS-Protection: 0
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Pragma: no-cache
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Expires: 0
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Length: 0
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Date: Fri, 05 Jan 2024 13:01:33 GMT
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Keep-Alive: timeout=60
+14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Connection: keep-alive
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication required
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - localhost:8080 requested authentication
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Authentication schemes in the order of preference: [Negotiate, Kerberos, NTLM, Digest, Basic]
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Negotiate authentication scheme not available
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Kerberos authentication scheme not available
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for NTLM authentication scheme not available
+14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Digest authentication scheme not available
+14:01:33.771 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 2][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
+14:01:33.771 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.775 [Test worker] DEBUG org.apache.http.client.protocol.ResponseProcessCookies - Cookie accepted [JSESSIONID="8079E6EBDEB9872F135AB8D8C40ED361", version:0, domain:localhost, path:/, expiry:null]
+14:01:33.780 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+14:01:33.780 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+14:01:33.780 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
+14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
+14:01:33.781 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51410<->127.0.0.1:8080
+14:01:33.781 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-2 HTTP/1.1
+14:01:33.781 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+14:01:33.781 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> GET /api/machines/-2 HTTP/1.1
+14:01:33.781 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
+14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: localhost:8080
+14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
+14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
+14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "GET /api/machines/-2 HTTP/1.1[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: localhost:8080[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 200 [\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Origin[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Access-Control-Request-Method[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Access-Control-Request-Headers[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "X-Content-Type-Options: nosniff[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "X-XSS-Protection: 0[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Pragma: no-cache[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Expires: 0[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/json[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Transfer-Encoding: chunked[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Keep-Alive: timeout=60[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: keep-alive[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "81[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "{"machineId":-2,"name":"TEST MACHINE","available":false,"machineStatus":false,"progress":40,"cycleType":null,"startingTime":null}[\r][\n]"
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 200 
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Origin
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Access-Control-Request-Method
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Access-Control-Request-Headers
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << X-Content-Type-Options: nosniff
+14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << X-XSS-Protection: 0
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Pragma: no-cache
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Expires: 0
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/json
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Transfer-Encoding: chunked
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Fri, 05 Jan 2024 13:01:33 GMT
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Keep-Alive: timeout=60
+14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: keep-alive
+14:01:33.969 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
+14:01:33.973 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "0[\r][\n]"
+14:01:33.973 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
+14:01:33.976 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 3][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
+14:01:33.977 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -65,7 +65,7 @@ public class MachineController {
     public MachineRecord findById(@PathVariable Long id) {
         MachineRecord machineFound = machineDao.findById(id).map(MachineMapper::of).orElse(null);
         if (machineFound == null) {
-            logger.info(LogToMachinesLogFile, "Accessed the /api/machines/{id} get request, but no element found.");
+            logger.error(LogToMachinesLogFile, "Accessed the /api/machines/{id} get request, but no element found.");
         } else {
             logger.info(LogToMachinesLogFile, "Accessed the /api/machines/" + id + " get request, returned element name " + machineFound.name());
         }
@@ -111,7 +111,7 @@ public class MachineController {
         ResponseEntity<MachineRecord> response;
         if (machineEntity == null) {
             response = ResponseEntity.badRequest().build();
-            logger.info(LogToMachinesLogFile, "Accessed the /api/machines/updateAvailable/{id} put request, status:" +
+            logger.error(LogToMachinesLogFile, "Accessed the /api/machines/updateAvailable/{id} put request, status:" +
                     response.getStatusCode().toString() + ". Not entity found by the id: " + id);
             return response;
         }
@@ -130,11 +130,11 @@ public class MachineController {
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         if (machineDao.findById(id).isEmpty()) {
-            logger.info(LogToMachinesLogFile, "Accessed the /api/machines/{id} delete request, status:" +
+            logger.error(LogToMachinesLogFile, "Accessed the /api/machines/{id} delete request, status:" +
                     ResponseEntity.badRequest().build().getStatusCode().toString() + " not entity found by the id: " + id);
         } else {
             machineDao.deleteById(id);
-        logger.info(LogToMachinesLogFile, "Accessed the /api/machines/"+id+" delete request, status:" +
+            logger.info(LogToMachinesLogFile, "Accessed the /api/machines/"+id+" delete request, status:" +
                 ResponseEntity.ok().build().getStatusCode().toString() + " deleted entity found by the id: " + id);
         }
     }

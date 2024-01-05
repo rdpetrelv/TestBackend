@@ -11,7 +11,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "MACHINE_ENTITY")
-
 public class MachineEntity {
 
     /**
@@ -56,11 +55,11 @@ public class MachineEntity {
     @Column
     private LocalTime StartingTime;
 
-    @OneToMany(mappedBy = "machine")
-    private Set<ReservationEntity> reservationEntitySet = Set.of();
+    //@OneToMany(mappedBy = "machine")
+    //private Set<ReservationEntity> reservationEntitySet = Set.of();
 
-    @OneToMany(mappedBy = "machine")
-    private Set<SensorEntity> sensorEntitySet = Set.of();
+    //@OneToMany(mappedBy = "machine")
+    //private Set<SensorEntity> sensorEntitySet = Set.of();
 
     /**
      * Get the machine ID
@@ -123,18 +122,18 @@ public class MachineEntity {
      *
      * @return The set of ReservationEntity objects associated with this machine.
      */
-    public Set<ReservationEntity> getReservationEntitySet() {
-        return reservationEntitySet;
-    }
+    //public Set<ReservationEntity> getReservationEntitySet() {
+    //    return reservationEntitySet;
+    //}
 
     /**
      * Gets the set of sensors associated with this machine.
      *
      * @return The set of SensorEntity objects associated with this machine.
      */
-    public Set<SensorEntity> getSensorEntitySet() {
-        return sensorEntitySet;
-    }
+    //public Set<SensorEntity> getSensorEntitySet() {
+    //    return sensorEntitySet;
+    //}
 
     /**
      * Sets the ID of the machine.
@@ -203,16 +202,16 @@ public class MachineEntity {
      *
      * @param reservationEntitySet The set of ReservationEntity objects to associate with this machine.
      */
-    public void setReservationEntitySet(Set<ReservationEntity> reservationEntitySet) {
-        this.reservationEntitySet = reservationEntitySet;
-    }
+    //public void setReservationEntitySet(Set<ReservationEntity> reservationEntitySet) {
+    //    this.reservationEntitySet = reservationEntitySet;
+    //}
 
     /**
      * Sets the set of sensors associated with this machine.
      *
      * @param sensorEntitySet The set of SensorEntity objects to associate with this machine.
      */
-    public void setSensorEntitySet(Set<SensorEntity> sensorEntitySet) {
-        this.sensorEntitySet = sensorEntitySet;
-    }
+    //    public void setSensorEntitySet(Set<SensorEntity> sensorEntitySet) {
+//        this.sensorEntitySet = sensorEntitySet;
+//    }
 }

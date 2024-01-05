@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ReservationDaoTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ReservationDaoTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.laundry.laundryMgmt.ReservationTest.html">com.laundry.laundryMgmt.ReservationTest</a> &gt; ReservationDaoTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.061s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">shouldFindAnyReservationById()</td>
+<td class="success">0.061s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>14:01:34.093 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ReservationDaoTest]: using SpringBootContextLoader
+14:01:34.095 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:01:34.095 [Test worker] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest]: ReservationDaoTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:01:34.107 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using ContextCustomizers for test class [ReservationDaoTest]: [DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer, ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer]
+14:01:34.124 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\HP\Documents\07. EMSE\TB3- Web movil and embeded programming\Project\laundryMgmt\build\classes\java\main\com\laundry\laundryMgmt\LaundryMgmtApplication.class]
+14:01:34.127 [Test worker] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.laundry.laundryMgmt.LaundryMgmtApplication for test class com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest
+14:01:34.131 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+14:01:34.132 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners for test class [ReservationDaoTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+14:01:34.132 [Test worker] DEBUG org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [ReservationDaoTest], class annotated with @DirtiesContext [false] with mode [null]
+14:01:34.133 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 27, missCount = 2]
+14:01:34.134 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest
+14:01:34.134 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 28, missCount = 2]
+14:01:34.137 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 29, missCount = 2]
+14:01:34.140 [Test worker] DEBUG org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [ReservationDaoTest], method [shouldFindAnyReservationById], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+14:01:34.141 [Test worker] DEBUG org.springframework.test.context.transaction.TransactionalTestExecutionListener - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest] and test method [shouldFindAnyReservationById]
+14:01:34.142 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 30, missCount = 2]
+14:01:34.143 [Test worker] DEBUG org.springframework.test.context.transaction.TransactionalTestExecutionListener - No method-level @Rollback override: using default rollback [true] for test method [public void com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest.shouldFindAnyReservationById()]
+14:01:34.143 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest.shouldFindAnyReservationById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+14:01:34.144 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1930186237&lt;open&gt;)] for JPA transaction
+14:01:34.144 [Test worker] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+14:01:34.144 [Test worker] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - begin
+14:01:34.144 [Test worker] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:60060c63-e42d-4ae7-9b58-f501764a2801;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+14:01:34.144 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@1bb509a6]
+14:01:34.145 [Test worker] DEBUG org.springframework.test.context.transaction.TransactionContext - Began transaction (1) for test class [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest]; test method [shouldFindAnyReservationById]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@7d6e2366]; rollback [true]
+14:01:34.145 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 31, missCount = 2]
+14:01:34.146 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 32, missCount = 2]
+14:01:34.149 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 33, missCount = 2]
+14:01:34.150 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(1930186237&lt;open&gt;)] for JPA transaction
+14:01:34.150 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Participating in existing transaction
+14:01:34.150 [Test worker] DEBUG org.hibernate.internal.SessionImpl - Initializing proxy: [com.laundry.laundryMgmt.models.ReservationEntity#-3]
+14:01:34.151 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+14:01:34.155 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.laundry.laundryMgmt.models.ReservationEntity -&gt; EntityResultInitializer(com.laundry.laundryMgmt.models.ReservationEntity)@1805208433 (SingleTableEntityPersister(com.laundry.laundryMgmt.models.ReservationEntity))
+	  com.laundry.laundryMgmt.models.ReservationEntity.machine -&gt; EntityJoinedFetchInitializer(com.laundry.laundryMgmt.models.ReservationEntity.machine)@1874361203 (ToOneAttributeMapping(NavigableRole[com.laundry.laundryMgmt.models.ReservationEntity.machine])@1596426482)
+
+14:01:34.155 [Test worker] DEBUG org.hibernate.SQL - select r1_0.reservation_id,m1_0.machine_id,m1_0.available,m1_0.machine_status,m1_0.progress,m1_0.starting_time,m1_0.cycle_type,m1_0.name,r1_0.reservation_available,r1_0.reservation_date,r1_0.reservation_end,r1_0.reservation_start,r1_0.reservation_user from reservation r1_0 left join machine_entity m1_0 on m1_0.machine_id=r1_0.machine_machine_id where r1_0.reservation_id=?
+Hibernate: select r1_0.reservation_id,m1_0.machine_id,m1_0.available,m1_0.machine_status,m1_0.progress,m1_0.starting_time,m1_0.cycle_type,m1_0.name,r1_0.reservation_available,r1_0.reservation_date,r1_0.reservation_end,r1_0.reservation_start,r1_0.reservation_user from reservation r1_0 left join machine_entity m1_0 on m1_0.machine_id=r1_0.machine_machine_id where r1_0.reservation_id=?
+14:01:34.163 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [-2]
+14:01:34.163 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityJoinedFetchInitializer) Hydrated EntityKey (com.laundry.laundryMgmt.models.ReservationEntity.machine): -2
+14:01:34.163 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.laundry.laundryMgmt.models.ReservationEntity): -3
+14:01:34.163 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityJoinedFetchInitializer) Created new entity instance [com.laundry.laundryMgmt.models.ReservationEntity.machine#-2] : 586899699
+14:01:34.166 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [false]
+14:01:34.166 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [false]
+14:01:34.166 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [40]
+14:01:34.166 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [null]
+14:01:34.166 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [null]
+14:01:34.167 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [7] - [TEST MACHINE]
+14:01:34.168 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityJoinedFetchInitializer) Done materializing entityInstance : com.laundry.laundryMgmt.models.ReservationEntity.machine#-2
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.laundry.laundryMgmt.models.ReservationEntity#-3] : 1640901959
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [8] - [false]
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [9] - [null]
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [10] - [null]
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [11] - [null]
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results - Extracted JDBC value [12] - [TEST RESERVATION]
+14:01:34.170 [Test worker] DEBUG org.hibernate.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.laundry.laundryMgmt.models.ReservationEntity#-3
+14:01:34.171 [Test worker] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@184b3575
+14:01:34.188 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 34, missCount = 2]
+14:01:34.193 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 35, missCount = 2]
+14:01:34.194 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 36, missCount = 2]
+14:01:34.194 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 37, missCount = 2]
+14:01:34.196 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 38, missCount = 2]
+14:01:34.197 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 39, missCount = 2]
+14:01:34.198 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 40, missCount = 2]
+14:01:34.198 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Initiating transaction rollback
+14:01:34.198 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Rolling back JPA transaction on EntityManager [SessionImpl(1930186237&lt;open&gt;)]
+14:01:34.198 [Test worker] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - rolling back
+14:01:34.199 [Test worker] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1930186237&lt;open&gt;)] after transaction
+14:01:34.199 [Test worker] DEBUG org.springframework.test.context.transaction.TransactionContext - Rolled back transaction (1) for test class [com.laundry.laundryMgmt.ReservationTest.ReservationDaoTest]; test method [shouldFindAnyReservationById]
+14:01:34.199 [Test worker] DEBUG org.springframework.test.context.support.DirtiesContextTestExecutionListener - After test method: class [ReservationDaoTest], method [shouldFindAnyReservationById], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+14:01:34.200 [Test worker] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@5a90ea5c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 41, missCount = 2]
+14:01:34.200 [Test worker] DEBUG org.springframework.test.context.support.DirtiesContextTestExecutionListener - After test class: class [ReservationDaoTest], class annotated with @DirtiesContext [false] with mode [null]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 5 ene 2024 14:01:35</p>
+</div>
+</div>
+</body>
+</html>
