@@ -18,12 +18,12 @@ public enum SensorType {
     HUMIDITY,
 
     /**
-     * Sensor type for light functionality.
+     * Sensor type for Light functionality.
      */
     LIGHT,
 
     /**
-     * Sensor type for level functionality.
+     * Sensor type for Level functionality.
      */
     LEVEL
 }
