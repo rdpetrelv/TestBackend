@@ -24,4 +24,4 @@ jobs:
 
       - name: Run MachineDaoTest
         run: |
-          ./gradlew test --tests com/laundry/laundryMgmt/MachineTest/MachineDaoTest.java
+          ./gradlew test --tests com.laundry.laundryMgmt.MachineTest.MachineDaoTest
