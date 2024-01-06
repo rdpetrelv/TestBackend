@@ -13,12 +13,17 @@ public enum SensorType {
     TEMPERATURE,
 
     /**
-     * Sensor type for movement detection.
+     * Sensor type for humidity measurement.
      */
-    MOVEMENT,
+    HUMIDITY,
 
     /**
-     * Sensor type for timer functionality.
+     * Sensor type for light functionality.
      */
-    TIMER
+    LIGHT,
+
+    /**
+     * Sensor type for level functionality.
+     */
+    LEVEL
 }
