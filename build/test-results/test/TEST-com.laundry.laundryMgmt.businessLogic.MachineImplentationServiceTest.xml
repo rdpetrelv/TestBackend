@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-05T13:01:34" hostname="DESKTOP-35ABBQB" time="0.007">
+<testsuite name="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-06T15:08:43" hostname="LAPTOP-K1PBTSJI" time="0.099">
   <properties/>
-  <testcase name="timeTest(CapturedOutput)" classname="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" time="0.007"/>
+  <testcase name="timeTest(CapturedOutput)" classname="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" time="0.099"/>
   <system-out><![CDATA[Output time is 15
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

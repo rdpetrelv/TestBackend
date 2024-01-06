@@ -1,231 +1,442 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-01-05T13:01:32" hostname="DESKTOP-35ABBQB" time="1.405">
+<testsuite name="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" tests="4" skipped="0" failures="4" errors="0" timestamp="2024-01-06T15:08:37" hostname="LAPTOP-K1PBTSJI" time="4.398">
   <properties/>
-  <testcase name="givenMachineByIdAccessed_whenMachineInfoRetrieved_then200IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.679"/>
-  <testcase name="givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.369"/>
-  <testcase name="givenPath_whenAccessedWithoutAuthentication_then401IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.04"/>
-  <testcase name="givenMachineExists_whenMachineIsRetrieved_thenRetrievedResourceIsCorrect()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.312"/>
-  <system-out><![CDATA[14:01:33.107 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-14:01:33.127 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-14:01:33.129 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-14:01:33.162 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.166 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
-14:01:33.176 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
-14:01:33.180 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51406<->127.0.0.1:8080
-14:01:33.181 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-500 HTTP/1.1
-14:01:33.181 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> GET /api/machines/-500 HTTP/1.1
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: localhost:8080
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
-14:01:33.185 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
-14:01:33.185 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET /api/machines/-500 HTTP/1.1[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-14:01:33.186 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
-14:01:33.336 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Origin[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Access-Control-Request-Method[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Access-Control-Request-Headers[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "X-XSS-Protection: 0[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Pragma: no-cache[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Expires: 0[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 0[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Keep-Alive: timeout=60[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-14:01:33.337 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
-14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 
-14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Origin
-14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Access-Control-Request-Method
-14:01:33.342 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Access-Control-Request-Headers
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-Content-Type-Options: nosniff
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << X-XSS-Protection: 0
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Pragma: no-cache
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Expires: 0
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 0
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Fri, 05 Jan 2024 13:01:33 GMT
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Keep-Alive: timeout=60
-14:01:33.343 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
-14:01:33.352 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
-14:01:33.353 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
-14:01:33.353 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.367 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-14:01:33.367 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.367 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
-14:01:33.367 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
-14:01:33.368 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51407<->127.0.0.1:8080
-14:01:33.368 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines HTTP/1.1
-14:01:33.368 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> GET /api/machines HTTP/1.1
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Host: localhost:8080
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Connection: Keep-Alive
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
-14:01:33.368 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
-14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "GET /api/machines HTTP/1.1[\r][\n]"
-14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
-14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
-14:01:33.368 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
-14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
-14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-14:01:33.369 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 >> "[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Origin[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Access-Control-Request-Method[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Vary: Access-Control-Request-Headers[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-Content-Type-Options: nosniff[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "X-XSS-Protection: 0[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Pragma: no-cache[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Expires: 0[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Transfer-Encoding: chunked[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
-14:01:33.728 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[\r][\n]"
-14:01:33.729 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "83[\r][\n]"
-14:01:33.729 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 << "[{"machineId":-2,"name":"TEST MACHINE","available":false,"machineStatus":false,"progress":40,"cycleType":null,"startingTime":null}][\r][\n]"
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << HTTP/1.1 200 
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Origin
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Access-Control-Request-Method
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Vary: Access-Control-Request-Headers
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-Content-Type-Options: nosniff
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << X-XSS-Protection: 0
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Pragma: no-cache
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Expires: 0
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Content-Type: application/json
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Transfer-Encoding: chunked
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Date: Fri, 05 Jan 2024 13:01:33 GMT
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Keep-Alive: timeout=60
-14:01:33.729 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 << Connection: keep-alive
-14:01:33.731 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
-14:01:33.742 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-14:01:33.742 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-14:01:33.742 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-14:01:33.743 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.743 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
-14:01:33.743 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
-14:01:33.744 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51409<->127.0.0.1:8080
-14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-500 HTTP/1.1
-14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
-14:01:33.744 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> GET /api/machines/-500 HTTP/1.1
-14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Host: localhost:8080
-14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Connection: Keep-Alive
-14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
-14:01:33.744 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 >> Accept-Encoding: gzip,deflate
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "GET /api/machines/-500 HTTP/1.1[\r][\n]"
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Host: localhost:8080[\r][\n]"
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Connection: Keep-Alive[\r][\n]"
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-14:01:33.744 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 >> "[\r][\n]"
-14:01:33.763 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "HTTP/1.1 401 [\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Set-Cookie: JSESSIONID=8079E6EBDEB9872F135AB8D8C40ED361; Path=/; HttpOnly[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "WWW-Authenticate: Basic realm="Realm"[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "X-Content-Type-Options: nosniff[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "X-XSS-Protection: 0[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Pragma: no-cache[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Expires: 0[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Content-Length: 0[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Keep-Alive: timeout=60[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "Connection: keep-alive[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << HTTP/1.1 401 
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Set-Cookie: JSESSIONID=8079E6EBDEB9872F135AB8D8C40ED361; Path=/; HttpOnly
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << WWW-Authenticate: Basic realm="Realm"
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << X-Content-Type-Options: nosniff
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << X-XSS-Protection: 0
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Pragma: no-cache
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Expires: 0
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Content-Length: 0
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Date: Fri, 05 Jan 2024 13:01:33 GMT
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Keep-Alive: timeout=60
-14:01:33.764 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 << Connection: keep-alive
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - Authentication required
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.auth.HttpAuthenticator - localhost:8080 requested authentication
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Authentication schemes in the order of preference: [Negotiate, Kerberos, NTLM, Digest, Basic]
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Negotiate authentication scheme not available
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Kerberos authentication scheme not available
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for NTLM authentication scheme not available
-14:01:33.765 [Test worker] DEBUG org.apache.http.impl.client.TargetAuthenticationStrategy - Challenge for Digest authentication scheme not available
-14:01:33.771 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 2][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
-14:01:33.771 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.775 [Test worker] DEBUG org.apache.http.client.protocol.ResponseProcessCookies - Cookie accepted [JSESSIONID="8079E6EBDEB9872F135AB8D8C40ED361", version:0, domain:localhost, path:/, expiry:null]
-14:01:33.780 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
-14:01:33.780 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://localhost:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://localhost:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-14:01:33.780 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://localhost:8080
-14:01:33.780 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to localhost/127.0.0.1:8080
-14:01:33.781 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:51410<->127.0.0.1:8080
-14:01:33.781 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /api/machines/-2 HTTP/1.1
-14:01:33.781 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
-14:01:33.781 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> GET /api/machines/-2 HTTP/1.1
-14:01:33.781 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Authorization: Basic dXNlcjpteVBhc3N3b3Jk
-14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: localhost:8080
-14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
-14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)
-14:01:33.782 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "GET /api/machines/-2 HTTP/1.1[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Authorization: Basic dXNlcjpteVBhc3N3b3Jk[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: localhost:8080[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5 (Java/17.0.8)[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-14:01:33.782 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 200 [\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Origin[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Access-Control-Request-Method[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Vary: Access-Control-Request-Headers[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "X-Content-Type-Options: nosniff[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "X-XSS-Protection: 0[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Pragma: no-cache[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Expires: 0[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/json[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Transfer-Encoding: chunked[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Fri, 05 Jan 2024 13:01:33 GMT[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Keep-Alive: timeout=60[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: keep-alive[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "81[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "{"machineId":-2,"name":"TEST MACHINE","available":false,"machineStatus":false,"progress":40,"cycleType":null,"startingTime":null}[\r][\n]"
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 200 
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Origin
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Access-Control-Request-Method
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Vary: Access-Control-Request-Headers
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << X-Content-Type-Options: nosniff
-14:01:33.968 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << X-XSS-Protection: 0
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Pragma: no-cache
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Expires: 0
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/json
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Transfer-Encoding: chunked
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Fri, 05 Jan 2024 13:01:33 GMT
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Keep-Alive: timeout=60
-14:01:33.969 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: keep-alive
-14:01:33.969 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive for 60000 MILLISECONDS
-14:01:33.973 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "0[\r][\n]"
-14:01:33.973 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
-14:01:33.976 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 3][route: {}->http://localhost:8080] can be kept alive for 60.0 seconds
-14:01:33.977 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://localhost:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
-]]></system-out>
+  <testcase name="givenMachineByIdAccessed_whenMachineInfoRetrieved_then200IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="4.282">
+    <failure message="org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused" type="org.apache.http.conn.HttpHostConnectException">org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused
+	at app//org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at app//org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at app//org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at app//org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at app//org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at app//org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at app//org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at app//org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at app//com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests.givenMachineByIdAccessed_whenMachineInfoRetrieved_then200IsReceived(MachineIntegrationTests.java:58)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 94 more
+</failure>
+  </testcase>
+  <testcase name="givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.027">
+    <failure message="org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused" type="org.apache.http.conn.HttpHostConnectException">org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused
+	at app//org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at app//org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at app//org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at app//org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at app//org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at app//org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at app//org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at app//org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at app//com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests.givenRequestWithNoAcceptHeader_whenRequestIsExecuted_thenDefaultResponseContentTypeIsJson(MachineIntegrationTests.java:74)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 94 more
+</failure>
+  </testcase>
+  <testcase name="givenPath_whenAccessedWithoutAuthentication_then401IsReceived()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.021">
+    <failure message="org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused" type="org.apache.http.conn.HttpHostConnectException">org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused
+	at app//org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at app//org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at app//org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at app//org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at app//org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at app//org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at app//org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at app//org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at app//com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests.givenPath_whenAccessedWithoutAuthentication_then401IsReceived(MachineIntegrationTests.java:42)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 94 more
+</failure>
+  </testcase>
+  <testcase name="givenMachineExists_whenMachineIsRetrieved_thenRetrievedResourceIsCorrect()" classname="com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests" time="0.063">
+    <failure message="org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused" type="org.apache.http.conn.HttpHostConnectException">org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1] failed: Connection refused
+	at app//org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at app//org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at app//org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at app//org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at app//org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at app//org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at app//org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at app//org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at app//org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at app//com.laundry.laundryMgmt.MachineTest.MachineIntegrationTests.givenMachineExists_whenMachineIsRetrieved_thenRetrievedResourceIsCorrect(MachineIntegrationTests.java:90)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.8/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.8/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.8/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.8/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 94 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
