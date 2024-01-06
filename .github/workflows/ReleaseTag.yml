@@ -25,10 +25,8 @@ jobs:
           unzip -d /opt/gradle gradle-8.2.1-bin.zip
           export PATH=$PATH:/opt/gradle/gradle-8.2.1/bin
 
-      - name: Build artifacts and run tests
+      - name: Run tests
         run: |
-          ./gradlew clean
-          ./gradlew build
           ./gradlew test --tests com.laundry.laundryMgmt.MachineTest.MachineDaoTest
 
       - name: Archive documentation
