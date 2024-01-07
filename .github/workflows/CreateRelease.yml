@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: documentation
-          path: build/docs  # Ajusta la ruta según la estructura de tu proyecto
+          path: build/docs
 
       - name: Archive sources
         uses: actions/upload-artifact@v2
@@ -41,15 +41,24 @@ jobs:
           name: sources
           path: src
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Release created automatically by GitHub Actions.
-          draft: false
-          prerelease: false
+        - name: Create Release
+            id: create_release
+            uses: actions/create-release@v1
+            env:
+              GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
+            with:
+              tag_name: ${{ github.ref }}
+              release_name: Release ${{ github.ref }}
+              body: |
+                Release created automatically by GitHub Actions.
+              draft: false
+              prerelease: false
+              assets:
+                - name: documentation
+                  path: build/docs/documentation.zip
+                  label: Documentation
+                  content_type: application/zip
+                - name: sources
+                  path: src/sources.zip
+                  label: Sources
+                  content_type: application/zip
