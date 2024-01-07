@@ -27,14 +27,20 @@ jobs:
       - name: Get last tag
         id: get_last_tag
         run: |
-          echo ::set-output name=last_tag::$(git describe --abbrev=0 --tags)
+            git fetch --tags
+            last_tag=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=1))
+            echo ::set-output name=last_tag::$last_tag
+
+      - name: Print last tag
+        run: |
+          echo "Last tag: ${{ steps.get_last_tag.outputs.last_tag }}"
 
       - name: Generate Changelog
         id: generate_changelog
         run: |
-          last_tag=$(echo "${{ steps.get_last_tag.outputs.last_tag }}")
-          changelog=$(git log $last_tag..HEAD --oneline)
-          echo "$changelog" > CHANGELOG.md
+            last_tag=$(echo "${{ steps.get_last_tag.outputs.last_tag }}")
+            changelog=$(git log $last_tag..HEAD --oneline)
+            echo "$changelog" > CHANGELOG.md
 
       - name: Get Release ID
         id: get_release_id
