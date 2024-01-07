@@ -30,18 +30,18 @@ jobs:
           ./gradlew javadoc 
 
       - name: Create Documentation Folder
-        run: mkdir -p ./build/docs/javadoc-folder
+        run: mkdir -p ./docs/javadoc
 
       - name: Copy Files to Documentation Folder
-        run: cp -R ./build/docs/javadoc/* ./build/docs/javadoc-folder/
+        run: cp -R ./build/docs/javadoc/* ./docs/javadoc/
 
       - name: Verify Documentation Folder
-        run: ls -R ./build/docs/javadoc-folder
+        run: ls -R ./docs/javadoc/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token:  ${{ secrets.MY_ACCESS_TOKEN }}
-          publish_dir: ./build/docs/javadoc-folder
+          github_token: ${{ secrets.MY_ACCESS_TOKEN }}
+          publish_dir: ./docs
           keep_files: true
           publish_branch: gh-pages
