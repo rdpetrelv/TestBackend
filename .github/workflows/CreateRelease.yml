@@ -1,4 +1,4 @@
-name: Create Release on Tag and test pass
+name: Create Release on Tag and Test Pass
 
 on:
   push:
@@ -29,12 +29,17 @@ jobs:
         run: |
           ./gradlew test --tests com.laundry.laundryMgmt.MachineTest.MachineDaoTest
 
-
       - name: Archive documentation
-        run: zip -r documentation.zip build/docs
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: build/docs  # Ajusta la ruta según la estructura de tu proyecto
 
       - name: Archive sources
-        run: zip -r sources.zip src
+        uses: actions/upload-artifact@v2
+        with:
+          name: sources
+          path: src
 
       - name: Create Release
         id: create_release
@@ -46,11 +51,5 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Release created automatically by GitHub Actions.
-
-      - name: Upload documentation as release asset
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: documentation.zip
-          asset_name: documentation
-          asset_content_type: application/zip
+          draft: false
+          prerelease: false
