@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Javadoc
         run: |
-          ./gradlew javadoc
+          ./gradlew javadoc 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
