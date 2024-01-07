@@ -1,0 +1,8 @@
+com.laundry.laundryMgmt
+com.laundry.laundryMgmt.businessLogic
+com.laundry.laundryMgmt.config
+com.laundry.laundryMgmt.controllers
+com.laundry.laundryMgmt.dao
+com.laundry.laundryMgmt.mappers
+com.laundry.laundryMgmt.models
+com.laundry.laundryMgmt.records
