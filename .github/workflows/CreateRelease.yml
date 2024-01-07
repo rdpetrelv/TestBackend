@@ -1,4 +1,4 @@
-name: Release on Tag and Test Pass
+name: Create Release on Tag and test pass
 
 on:
   push:
@@ -41,6 +41,12 @@ jobs:
           name: sources
           path: src
 
+      - name: Archive entire project
+        uses: actions/upload-artifact@v2
+        with:
+          name: entire-project
+          path: .
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -66,4 +72,12 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src
           asset_name: sources
+          asset_content_type: application/zip
+
+      - name: Upload entire project as release asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: .
+          asset_name: entire-project
           asset_content_type: application/zip
