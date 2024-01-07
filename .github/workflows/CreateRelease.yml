@@ -51,9 +51,14 @@ jobs:
         id: changelog
         uses: requarks/changelog-action@v1
         with:
-           token: ${{ secrets.MY_ACCESS_TOKEN }}
-           tag: ${{ github.ref_name }}
-           includeInvalidCommits: true
+          token: ${{ secrets.MY_ACCESS_TOKEN }}
+          tag: ${{ github.ref_name }}
+          includeInvalidCommits: true
+          excludeTypes: ""
+          writeToFile: true
+          includeRefIssues: true
+          useGitmojis: true
+          reverseOrder: false
 
       - name: Check Changelog
         run: ls -R
