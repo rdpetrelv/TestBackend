@@ -1,5 +1,3 @@
-name: Create Release on Tag and Test Pass
-
 on:
   push:
     tags:
@@ -41,17 +39,6 @@ jobs:
           name: sources
           path: ./src
 
-      - name: Generate Changelog
-        run: |
-          TAG=$(git describe --tags --abbrev=0)
-          git log --pretty=format:"%s" $TAG..HEAD > CHANGELOG.md
-
-      - name: Archive Changelog
-        uses: actions/upload-artifact@v2
-        with:
-          name: changelog
-          path: ./CHANGELOG.md
-
       - name: Create Documentation ZIP
         run: zip -r build/docs/documentation.zip build/docs
 
@@ -66,11 +53,9 @@ jobs:
           file: |
             build/docs/documentation.zip
             src/sources.zip
-            CHANGELOG.md
           asset_name: |
             documentation.zip
             sources.zip
-            CHANGELOG.md
           tag: ${{ github.ref }}
           overwrite: true
           body: |
