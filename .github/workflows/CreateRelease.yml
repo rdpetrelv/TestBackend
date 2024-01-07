@@ -51,7 +51,7 @@ jobs:
         id: create_release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
           file: build/docs/documentation.zip
           asset_name: documentation.zip
           tag: ${{ github.ref }}
