@@ -47,6 +47,11 @@ jobs:
       - name: Create Sources ZIP
         run: zip -r src/sources.zip src
 
+      - name: Generate Changelog
+        run: |
+              git fetch --tags
+              git-chglog --output CHANGELOG.md
+
       - name: Create Release
         id: create_release
         uses: svenstaro/upload-release-action@v2
@@ -70,3 +75,15 @@ jobs:
           overwrite: true
           body: |
             Release created automatically by GitHub Actions.
+            
+      - name: Upload Changelog
+        id: upload_changelog
+        uses: svenstaro/upload-release-action@v2
+        with:
+            repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
+            file: CHANGELOG.md
+            asset_name: changelog.md
+            tag: ${{ github.ref }}
+            overwrite: true
+            body: |
+              Release created automatically by GitHub Actions
