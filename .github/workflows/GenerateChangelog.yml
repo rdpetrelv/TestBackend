@@ -27,9 +27,7 @@ jobs:
       - name: Get last tag
         id: get_last_tag
         run: |
-          git fetch --tags
-          last_tag=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=1))
-          echo ::set-output name=last_tag::$last_tag
+          echo ::set-output name=last_tag::$(git describe --abbrev=0 --tags)
 
       - name: Print last tag
         run: |
