@@ -52,8 +52,12 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
-          file: build/docs/documentation.zip
-          asset_name: documentation.zip
+          files: |
+            build/docs/documentation.zip
+            src/sources.zip
+          asset_names: |
+            documentation.zip
+            sources.zip
           tag: ${{ github.ref }}
           overwrite: true
           body: |
