@@ -57,8 +57,13 @@ jobs:
       - name: Get last tag
         id: get_last_tag
         run: |
-          last_tag=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=1)^)
+          last_tag=$(git describe --tags --abbrev=0)
           echo ::set-output name=last_tag::$last_tag
+
+      - name: Debug tags
+        run: |
+          git fetch --tags
+          git tag -l
 
       - name: Generate Changelog
         id: generate_changelog
