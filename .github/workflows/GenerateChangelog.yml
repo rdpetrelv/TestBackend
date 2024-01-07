@@ -1,4 +1,4 @@
-name: Generate Changelog
+name: Generate Changelog on Release
 
 on:
   release:
@@ -36,15 +36,16 @@ jobs:
           changelog=$(git log $last_tag..HEAD --oneline)
           echo "$changelog" > CHANGELOG.md
 
-      - name: Create Release with Changelog
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
+      - name: Get Release ID
+        id: get_release_id
+        run: |
+          RELEASE_ID=$(curl -s -H "Authorization: token ${{ secrets.MY_ACCESS_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref }}" | jq -r '.id')
+          echo "Release ID: $RELEASE_ID"
+
+      - name: Update Release with Changelog
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Release created automatically by GitHub Actions.
-            ${{ steps.generate_changelog.outputs.changelog }}
-          draft: false
-          prerelease: false
+          files: CHANGELOG.md
+          release_id: ${{ steps.get_release_id.outputs.RELEASE_ID }}
+          body: ${{ steps.generate_changelog.outputs.changelog }}
+          token: ${{ secrets.MY_ACCESS_TOKEN }}
