@@ -48,9 +48,14 @@ jobs:
         run: zip -r src/sources.zip src
 
       - name: Generate Changelog
-        run: |
-          git fetch --tags --prune
-          git-chglog --output CHANGELOG.md
+        id: generate_changelog
+        uses: heinrichreimer/action-github-changelog-generator@v2.3
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            output: ./CHANGELOG.md
+            issues: true
+            pullRequests: true
+            unreleasedOnly: true
 
       - name: Create Release
         id: create_release
@@ -87,3 +92,9 @@ jobs:
             overwrite: true
             body: |
               Release created automatically by GitHub Actions
+
+      - name: Upload Changelog
+        uses: actions/upload-artifact@v2
+        with:
+            name: changelog
+            path: ./CHANGELOG.md
