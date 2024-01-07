@@ -1,4 +1,4 @@
-name: Create Release on Tag and test pass
+name: Release on Tag and Test Pass
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sources
-          path: ./src
+          path: src
 
       - name: Create Release
         id: create_release
@@ -51,5 +51,19 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Release created automatically by GitHub Actions.
-          draft: false
-          prerelease: false
+
+      - name: Upload documentation as release asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/docs
+          asset_name: documentation
+          asset_content_type: application/zip
+
+      - name: Upload sources as release asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: src
+          asset_name: sources
+          asset_content_type: application/zip
