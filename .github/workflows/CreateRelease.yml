@@ -33,13 +33,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: documentation
-          path: build/docs
+          path: ./build/docs
 
       - name: Archive sources
         uses: actions/upload-artifact@v2
         with:
           name: sources
-          path: src
+          path: ./src
 
       - name: Create Documentation ZIP
         run: zip -r build/docs/documentation.zip build/docs
@@ -61,5 +61,12 @@ jobs:
             Download the source code [here](https://github.com/rdpetrelv/TestBackend/releases/download/${{ github.ref }}/sources.zip).
           draft: false
           prerelease: false
-
-
+          assets:
+            - name: documentation
+              path: ./build/docs/documentation.zip
+              label: Documentation
+              content_type: application/zip
+            - name: sources
+              path: ./src/sources.zip
+              label: Sources
+              content_type: application/zip
