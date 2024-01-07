@@ -51,7 +51,7 @@ jobs:
         id: generate_changelog
         uses: heinrichreimer/action-github-changelog-generator@v2.3
         with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.MY_ACCESS_TOKEN }}
             output: ./CHANGELOG.md
             issues: true
             pullRequests: true
