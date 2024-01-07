@@ -35,6 +35,9 @@ jobs:
       - name: Copy Files to Documentation Folder
         run: cp -R ./build/docs/javadoc/* ./build/docs/javadoc-folder/
 
+      - name: Verify Documentation Folder
+        run: ls -R ./build/docs/javadoc-folder
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
