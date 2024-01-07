@@ -47,13 +47,30 @@ jobs:
       - name: Create Sources ZIP
         run: zip -r src/sources.zip src
 
+      - name: Generate Changelog
+        uses: webfactory/conventional-changelog-action@v3
+        with:
+            version: ${{ github.ref }}
+
+      - name: Archive Changelog
+        uses: actions/upload-artifact@v2
+        with:
+          name: changelog
+          path: ./CHANGELOG.md
+
       - name: Create Release
         id: create_release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
-          file: build/docs/documentation.zip
-          asset_name: documentation.zip
+          file: |
+            build/docs/documentation.zip
+            src/sources.zip
+            CHANGELOG.md
+          asset_name: |
+            documentation.zip
+            sources.zip
+            CHANGELOG.md
           tag: ${{ github.ref }}
           overwrite: true
           body: |
