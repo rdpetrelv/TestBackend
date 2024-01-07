@@ -52,12 +52,13 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
-          file:
+          file: |
             build/docs/documentation.zip
             src/sources.zip
-          asset_name:
+          asset_name: |
             documentation.zip
             sources.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: Release created automatically by GitHub Actions.
+          body: |
+            Release created automatically by GitHub Actions.
