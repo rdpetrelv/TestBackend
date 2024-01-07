@@ -27,7 +27,8 @@ jobs:
       - name: Get last tag
         id: get_last_tag
         run: |
-          echo ::set-output name=last_tag::$(git describe --abbrev=0 --tags)
+          last_tag=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=1)^)
+          echo ::set-output name=last_tag::$last_tag
 
       - name: Print last tag
         run: |
@@ -38,6 +39,8 @@ jobs:
         run: |
           last_tag=${{ steps.get_last_tag.outputs.last_tag }}
           changelog=$(git log --pretty=format:"- %s" $last_tag..${{ github.ref }})
+          echo "Commits between $last_tag and ${{ github.ref }}:"
+          git log $last_tag..${{ github.ref }} --oneline
           if [ -z "$changelog" ]; then
             echo "Changelog is empty. No commits found in the specified range."
             exit 1
