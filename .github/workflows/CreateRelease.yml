@@ -1,3 +1,5 @@
+name: Create Release on Tag and Test Pass
+
 on:
   push:
     tags:
@@ -50,12 +52,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
-          file: |
-            build/docs/documentation.zip
-            src/sources.zip
-          asset_name: |
-            documentation.zip
-            sources.zip
+          file: build/docs/documentation.zip
+          asset_name: documentation.zip
           tag: ${{ github.ref }}
           overwrite: true
           body: |
