@@ -49,8 +49,8 @@ jobs:
 
       - name: Generate Changelog
         run: |
-              git fetch --tags
-              git-chglog --output CHANGELOG.md
+          git fetch --tags --prune
+          git-chglog --output CHANGELOG.md
 
       - name: Create Release
         id: create_release
