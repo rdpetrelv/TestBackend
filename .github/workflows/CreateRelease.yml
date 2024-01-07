@@ -47,15 +47,12 @@ jobs:
       - name: Create Sources ZIP
         run: zip -r src/sources.zip src
 
-      - name: Generate Changelog
-        id: generate_changelog
-        uses: heinrichreimer/action-github-changelog-generator@v2.3
+      - name: Update CHANGELOG
+        id: changelog
+        uses: requarks/changelog-action@v1
         with:
-            token: ${{ secrets.MY_ACCESS_TOKEN }}
-            output: ./CHANGELOG.md
-            issues: true
-            pullRequests: true
-            unreleasedOnly: true
+           token: ${{ secrets.MY_ACCESS_TOKEN }}
+           tag: ${{ github.ref_name }}
 
       - name: Create Release
         id: create_release
@@ -94,7 +91,13 @@ jobs:
               Release created automatically by GitHub Actions
 
       - name: Upload Changelog
-        uses: actions/upload-artifact@v2
+        id: upload_changelog
+        uses: svenstaro/upload-release-action@v2
         with:
-            name: changelog
-            path: ./CHANGELOG.md
+          repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
+          file: ./CHANGELOG.md
+          asset_name: changelog.md
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: |
+            Release created automatically by GitHub Actions.
