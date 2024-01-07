@@ -53,6 +53,7 @@ jobs:
         with:
            token: ${{ secrets.MY_ACCESS_TOKEN }}
            tag: ${{ github.ref_name }}
+           includeInvalidCommits: true
 
       - name: Create Release
         id: create_release
