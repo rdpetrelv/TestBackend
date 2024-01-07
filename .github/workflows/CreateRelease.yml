@@ -57,15 +57,9 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Release created automatically by GitHub Actions.
+            Download the documentation [here](https://github.com/rdpetrelv/TestBackend/releases/download/${{ github.ref }}/documentation.zip).
+            Download the source code [here](https://github.com/rdpetrelv/TestBackend/releases/download/${{ github.ref }}/sources.zip).
           draft: false
           prerelease: false
-          assets:
-            - name: documentation
-              path: build/docs/documentation.zip
-              label: Documentation
-              content_type: application/zip
-            - name: sources
-              path: src/sources.zip
-              label: Sources
-              content_type: application/zip
+
 
