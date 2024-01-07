@@ -66,6 +66,18 @@ jobs:
           body: |
             Release created automatically by GitHub Actions.
 
+      - name: Upload Documentation
+        id: upload_documentation
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
+          file: build/docs/documentation.zip
+          asset_name: documentation.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: |
+            Release created automatically by GitHub Actions.
+
       - name: Upload Sources
         id: upload_sources
         uses: svenstaro/upload-release-action@v2
@@ -77,18 +89,6 @@ jobs:
           overwrite: true
           body: |
             Release created automatically by GitHub Actions.
-            
-      - name: Upload Changelog
-        id: upload_changelog
-        uses: svenstaro/upload-release-action@v2
-        with:
-            repo_token: ${{ secrets.MY_ACCESS_TOKEN }}
-            file: CHANGELOG.md
-            asset_name: changelog.md
-            tag: ${{ github.ref }}
-            overwrite: true
-            body: |
-              Release created automatically by GitHub Actions
 
       - name: Upload Changelog
         id: upload_changelog
@@ -100,4 +100,4 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: |
-            Release created automatically by GitHub Actions.
+            Release created automatically by GitHub Actions
