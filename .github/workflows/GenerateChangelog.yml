@@ -1,0 +1,51 @@
+name: Generate Changelog
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17.0.8'
+          distribution: 'adopt'
+
+      - name: Set up Gradle 8.2.1
+        run: |
+          wget https://services.gradle.org/distributions/gradle-8.2.1-bin.zip
+          unzip -d /opt/gradle gradle-8.2.1-bin.zip
+          export PATH=$PATH:/opt/gradle/gradle-8.2.1/bin
+
+      - name: Get last tag
+        id: get_last_tag
+        run: |
+          echo ::set-output name=last_tag::$(git describe --abbrev=0 --tags)
+
+      - name: Generate Changelog
+        id: generate_changelog
+        run: |
+          last_tag=$(echo "${{ steps.get_last_tag.outputs.last_tag }}")
+          changelog=$(git log $last_tag..HEAD --oneline)
+          echo "$changelog" > CHANGELOG.md
+
+      - name: Create Release with Changelog
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release created automatically by GitHub Actions.
+            ${{ steps.generate_changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
