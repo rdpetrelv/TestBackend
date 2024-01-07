@@ -33,10 +33,22 @@ jobs:
         run: |
           echo "Last tag: ${{ steps.get_last_tag.outputs.last_tag }}"
 
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -z "$(git log ${{ steps.get_last_tag.outputs.last_tag }}..HEAD --oneline)" ]; then
+            echo "No changes since the last tag."
+            exit 0
+          fi
+
+      - name: Print git log output
+        run: |
+          git log ${{ steps.get_last_tag.outputs.last_tag }}..HEAD --oneline
+
       - name: Generate Changelog
         id: generate_changelog
         run: |
-          last_tag=$(echo "${{ steps.get_last_tag.outputs.last_tag }}")
+          last_tag=${{ steps.get_last_tag.outputs.last_tag }}
           changelog=$(git log $last_tag..HEAD --oneline)
           echo "$changelog" > CHANGELOG.md
 
