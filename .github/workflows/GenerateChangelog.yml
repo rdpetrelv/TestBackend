@@ -33,24 +33,21 @@ jobs:
         run: |
           echo "Last tag: ${{ steps.get_last_tag.outputs.last_tag }}"
 
-      - name: Check for changes
-        id: check_changes
+      - name: Debug info before generate_changelog
         run: |
-          if [ -z "$(git log ${{ steps.get_last_tag.outputs.last_tag }}..HEAD --oneline)" ]; then
-            echo "No changes since the last tag."
-            exit 0
-          fi
-
-      - name: Print git log output
-        run: |
+          echo "Last tag: ${{ steps.get_last_tag.outputs.last_tag }}"
           git log ${{ steps.get_last_tag.outputs.last_tag }}..HEAD --oneline
 
       - name: Generate Changelog
         id: generate_changelog
         run: |
           last_tag=${{ steps.get_last_tag.outputs.last_tag }}
-          changelog=$(git log $last_tag..HEAD --oneline)
-          echo "$changelog" > CHANGELOG.md
+          changelog=$(git log --pretty=format:"- %s" $last_tag..HEAD)
+          echo "$changelog" > temp_changelog.md
+          mv temp_changelog.md CHANGELOG.md
+
+      - name: Debug info after generate_changelog
+        run: cat CHANGELOG.md
 
       - name: Get Release ID
         id: get_release_id
