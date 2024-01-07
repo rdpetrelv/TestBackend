@@ -41,23 +41,10 @@ jobs:
           name: sources
           path: ./src
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Release created automatically by GitHub Actions.
-          draft: false
-          prerelease: false
-
       - name: Get last tag
         id: get_last_tag
         run: |
-          last_tag=$(git describe --tags --abbrev=0 $(git rev-list --tags --max-count=1)^)
+          last_tag=$(git describe --tags --abbrev=0 $(git rev-list --tags --max-count=1))
           echo ::set-output name=last_tag::$last_tag
 
       - name: Debug tags
@@ -80,6 +67,22 @@ jobs:
 
       - name: Debug info after generate_changelog
         run: cat CHANGELOG.md
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release created automatically by GitHub Actions.
+
+            Changelog:
+            $(cat CHANGELOG.md)
+          draft: false
+          prerelease: false
 
       - name: Get Release ID
         id: get_release_id
