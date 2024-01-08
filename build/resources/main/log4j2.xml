@@ -2,11 +2,11 @@
 <Configuration status="warn">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+<!--            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>-->
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="MachineOutputLog" fileName="laundryapp_Machines.log" append="false">
-            <MarkerFilter marker="LogToMachinesLogFile" onMatch="ACCEPT" onMismatch="DENY" />
+        <File name="MachineOutputLog" fileName="laundryapp_api_logger.log" append="false">
+            <MarkerFilter marker="LogToAPILogFile" onMatch="ACCEPT" onMismatch="DENY" />
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
             </PatternLayout>

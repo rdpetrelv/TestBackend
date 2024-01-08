@@ -6,6 +6,10 @@ import com.laundry.laundryMgmt.models.ReservationEntity;
 import com.laundry.laundryMgmt.records.ReservationCommand;
 import com.laundry.laundryMgmt.records.ReservationRecord;
 import jakarta.transaction.Transactional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +30,9 @@ public class ReservationController {
 
     private final ReservationDao reservationDao;
 
+    private static final Logger logger = LogManager.getLogger(ReservationController.class);
+    public static Marker LogToAPILogFile = MarkerManager.getMarker("LogToAPILogFile");
+
     /**
      * Constructor for ReservationController.
      * @param reservationDao The Data Access Object for ReservationEntity
@@ -40,11 +47,14 @@ public class ReservationController {
      */
     @GetMapping  //Busca todas las reservas y las ordena segun la ID
     public List<ReservationRecord> findAll() {
-        return reservationDao.findAll()
+        List<ReservationRecord> recordList = reservationDao.findAll()
                 .stream()
                 .map(ReservationMapper::of)
                 .sorted(Comparator.comparing(ReservationRecord::reservationId))
                 .collect(Collectors.toList());
+        logger.debug(LogToAPILogFile, "Record DAO access verification: List of reservation records created with "+ recordList.size()+" elements.");
+        logger.info(LogToAPILogFile, "Accessed the /api/reservation get request, returned " + recordList.size() + " element(s).");
+        return recordList;
     }
 
     /**
@@ -54,7 +64,15 @@ public class ReservationController {
      */
     @GetMapping(path = "/{id}") // Busca una reserva especifica por el Id
     public ReservationRecord findById(@PathVariable Long id) {
-        return reservationDao.findById(id).map(ReservationMapper::of).orElse(null);
+        ReservationRecord reservationfind = reservationDao.findById(id).map(ReservationMapper::of).orElse(null);
+        logger.debug(LogToAPILogFile, "Machine DAO access verification: reservation records created with "+ reservationfind.reservationId()+".");
+        if (reservationfind == null) {
+            logger.trace(LogToAPILogFile, "Not reservation found");
+            logger.error(LogToAPILogFile, "Accessed the /api/reservation/{id} get request, but no element found.");
+        } else {
+            logger.info(LogToAPILogFile, "Accessed the /api/reservation/" + id + " get request, returned element id " + reservationfind.reservationId());
+        }
+        return reservationfind;
     }
 
     /**
@@ -108,10 +126,17 @@ public class ReservationController {
      */
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
+        if (reservationDao.findById(id).isEmpty()) {
+            logger.trace(LogToAPILogFile, "Not reservation found");
+            logger.error(LogToAPILogFile, "Accessed the /api/reservation/{id} delete request, status:" +
+                    ResponseEntity.badRequest().build().getStatusCode().toString() + " not entity found by the id: " + id);
+        } else {
+            reservationDao.deleteById(id);
+            logger.info(LogToAPILogFile, "Accessed the /api/reservation/"+id+" delete request, status:" +
+                    ResponseEntity.ok().build().getStatusCode().toString() + " deleted entity found by the id: " + id);
+        }
         reservationDao.deleteById(id);
     }
-
-
 }
 
 
