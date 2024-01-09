@@ -4,6 +4,10 @@ import com.laundry.laundryMgmt.dao.SensorDao;
 import com.laundry.laundryMgmt.models.SensorEntity;
 import com.laundry.laundryMgmt.records.SensorRecord;
 import jakarta.transaction.Transactional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.laundry.laundryMgmt.models.SensorType;
@@ -26,6 +30,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class SensorController {
 
     private final SensorDao sensorDao;
+    private static final Logger logger = LogManager.getLogger(SensorController.class);
+    public static Marker LogToAPILogFile = MarkerManager.getMarker("LogToAPILogFile");
 
     /**
      * Constructor for SensorController.
@@ -43,10 +49,13 @@ public class SensorController {
      */
     @GetMapping
     public List<SensorEntity> findAll() {
-        return sensorDao.findAll()
+        List<SensorEntity> sensorEntityList = sensorDao.findAll()
                 .stream()
                 .sorted(Comparator.comparing(SensorEntity::getSensorName))
                 .collect(Collectors.toList());
+        logger.debug(LogToAPILogFile, "Sensor DAO access verification: List of sensors records created with "+ sensorEntityList.size()+" elements.");
+        logger.info(LogToAPILogFile, "Accessed the /api/sensors get request, returned " + sensorEntityList.size() + " element(s).");
+        return sensorEntityList;
     }
 
     /**
@@ -117,7 +126,15 @@ public class SensorController {
      */
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
-        sensorDao.deleteById(id);
+        if (sensorDao.findById(id).isEmpty()) {
+            logger.trace(LogToAPILogFile, "Not sensor found");
+            logger.error(LogToAPILogFile, "Accessed the /api/sensors/{id} delete request, status:" +
+                    ResponseEntity.badRequest().build().getStatusCode().toString() + " not entity found by the id: " + id);
+        } else {
+            sensorDao.deleteById(id);
+            logger.info(LogToAPILogFile, "Accessed the /api/sensors/"+id+" delete request, status:" +
+                    ResponseEntity.ok().build().getStatusCode().toString() + " deleted entity found by the id: " + id);
+        }
     }
 
     /**
