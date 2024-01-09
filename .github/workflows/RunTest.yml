@@ -26,3 +26,8 @@ jobs:
       - name: Run MachineDaoTest
         run: |
           ./gradlew test --tests com.laundry.laundryMgmt.MachineTest.MachineDaoTest
+            - name: Run MachineDaoTest
+
+      - name: Run SensorDaoTest
+        run: |
+          ./gradlew test --tests com/laundry/laundryMgmt/SensorTest/SensorDaoTest
