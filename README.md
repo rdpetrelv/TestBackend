@@ -53,7 +53,7 @@ npm run dev
 ```
 ## Usage
 Once you have successfully set up the development environment, you can access the Laundary Management application through the following URL:
-#### [http://localhost:5173/](http://localhost:5173/)
+#### [http://localhost:8080/](http://localhost:8080/)
 
 - ###  Machines Page
 On this page you can view the status (available or not) of the machine as well as its progress in real time.
