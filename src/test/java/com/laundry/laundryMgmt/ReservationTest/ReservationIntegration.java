@@ -56,7 +56,7 @@ public class ReservationIntegration {
     @Test
     public void givenReservationByIdAccessed_whenReservationInfoRetrieved_then200IsReceived() throws ClientProtocolException, IOException {
         // Construct a GET request with authentication and specific reservation ID
-        HttpUriRequest request = new HttpGet("http://localhost:8080/api/reservation/-500");
+        HttpUriRequest request = new HttpGet("http://localhost:8080/api/reservation");
         request.setHeader(HttpHeaders.AUTHORIZATION, authHeader);
         // Execute the request
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
