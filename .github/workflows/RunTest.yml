@@ -30,4 +30,4 @@ jobs:
 
       - name: Run SensorDaoTest
         run: |
-          ./gradlew test --tests com/laundry/laundryMgmt/SensorTest/SensorDaoTest
+          ./gradlew test --tests com.laundry.laundryMgmt.SensorTest.SensorDaoTest

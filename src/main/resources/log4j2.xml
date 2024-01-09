@@ -5,7 +5,7 @@
 <!--            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>-->
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="MachineOutputLog" fileName="laundryapp_api_logger.log" append="false">
+        <File name="OutputLog" fileName="laundryapp_api_logger.log" append="false">
             <MarkerFilter marker="LogToAPILogFile" onMatch="ACCEPT" onMismatch="DENY" />
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
@@ -15,7 +15,7 @@
     <Loggers>
         <Root level="TRACE">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="MachineOutputLog"/>
+            <AppenderRef ref="OutputLog"/>
         </Root>
     </Loggers>
 </Configuration>
