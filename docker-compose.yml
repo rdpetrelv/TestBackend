@@ -1,0 +1,19 @@
+version: '3'
+# In order to set the two images of the backend (spring-boot-app) and frontend (vuejs-app)
+# please create a copy of the {rootfolder}/TestBackend and of the
+# {rootfolder}/LaundryManagementFrontEnd repositories, then in the root folder copy this
+# docker-compose.yml file and run it with the command: docker-compose up.
+services:
+  spring-boot-app:
+    image: laundry_mgmt_app/backend
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_PORT=8080 # Set the desired port for the Spring Boot app
+
+  vuejs-app:
+    image: laundry_mgmt_app/frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VUE_APP_PORT=5173 # Set the desired port for the Vue.js app
