@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/dao/MachineDao.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\businessLogic\MachineImplementationService.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/dao/ReservationDao.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\businessLogic\MachineService.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/dao/SensorDao.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\businessLogic\MachinesServices.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/businessLogic/MachineImplementationService.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\businessLogic\MachinesServicesImplementation.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/businessLogic/MachineService.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\config\SpringSecurityConfig.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/businessLogic/MachinesServices.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\controllers\MachineController.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/businessLogic/MachinesServicesImplementation.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\controllers\ReservationController.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/LaundryMgmtApplicationConfig.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\controllers\SecurityController.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/config/SpringSecurityConfig.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\controllers\SensorController.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/models/SensorEntity.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\dao\MachineDao.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/models/SensorType.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\dao\ReservationDao.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/models/CycleType.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\dao\SensorDao.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/models/MachineEntity.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\LaundryMgmtApplication.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/models/ReservationEntity.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\LaundryMgmtApplicationConfig.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/mappers/SensorMapper.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\mappers\MachineMapper.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/mappers/MachineMapper.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\mappers\ReservationMapper.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/mappers/ReservationMapper.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\mappers\SensorMapper.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/records/MachineRecord.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\models\CycleType.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/records/ReservationCommand.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\models\MachineEntity.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/records/SensorRecord.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\models\ReservationEntity.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/records/ReservationRecord.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\models\SensorEntity.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/records/MachineCommand.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\models\SensorType.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/LaundryMgmtApplication.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\records\MachineCommand.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/controllers/SensorController.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\records\MachineRecord.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/controllers/ReservationController.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\records\ReservationCommand.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/controllers/MachineController.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\records\ReservationRecord.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/main/java/com/laundry/laundryMgmt/controllers/SecurityController.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\main\java\com\laundry\laundryMgmt\records\SensorRecord.java">
 </file>
 </checkstyle>

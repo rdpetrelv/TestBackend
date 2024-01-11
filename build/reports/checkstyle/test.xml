@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/SensorTest/SensorIntegration.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\businessLogic\MachineImplentationServiceTest.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/SensorTest/SensorDaoTest.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\businessLogic\MachinesImplementationServicesTest.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/MachineTest/MachineDaoTest.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\LaundryMgmtApplicationTests.java">
+<error line="9" column="1" severity="warning" message="La línea contiene un carácter de tabulación." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+<error line="10" column="1" severity="warning" message="La línea contiene un carácter de tabulación." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+<error line="11" column="1" severity="warning" message="La línea contiene un carácter de tabulación." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/MachineTest/MachineIntegrationTests.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\MachineTest\MachineDaoTest.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/businessLogic/MachinesImplementationServicesTest.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\MachineTest\MachineIntegrationTests.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/businessLogic/MachineImplentationServiceTest.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\ReservationTest\ReservationDaoTest.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/LaundryMgmtApplicationTests.java">
-<error line="9" column="1" severity="warning" message="Line contains a tab character." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="10" column="1" severity="warning" message="Line contains a tab character." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="11" column="1" severity="warning" message="Line contains a tab character." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\ReservationTest\ReservationIntegration.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/ReservationTest/ReservationIntegration.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\SensorTest\SensorDaoTest.java">
 </file>
-<file name="/home/kali/Toolbox3/Projet/TestBackend/src/test/java/com/laundry/laundryMgmt/ReservationTest/ReservationDaoTest.java">
+<file name="C:\Users\Lenovo\Project\TestBackend\src\test\java\com\laundry\laundryMgmt\SensorTest\SensorIntegration.java">
 </file>
 </checkstyle>

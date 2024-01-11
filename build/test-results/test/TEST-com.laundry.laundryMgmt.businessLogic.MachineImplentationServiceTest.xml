@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-09T17:17:42" hostname="kali" time="0.026">
+<testsuite name="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-11T21:31:25" hostname="LAPTOP-K1PBTSJI" time="0.189">
   <properties/>
-  <testcase name="timeTest(CapturedOutput)" classname="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" time="0.026"/>
+  <testcase name="timeTest(CapturedOutput)" classname="com.laundry.laundryMgmt.businessLogic.MachineImplentationServiceTest" time="0.189"/>
   <system-out><![CDATA[Output time is 15
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+22:31:25.568 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
