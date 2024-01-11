@@ -36,7 +36,40 @@ cd LaundaryManagementFrontEnd
 npm install
 npm run dev
 ```
+
 Use the frontend in [http://localhost:5173/](http://localhost:5173/).
+
+## Main Pages in the Frontend Application
+### Home Page (index.html)
+This is the landing page of the application, accessible at:
+```
+http://localhost:5173/
+```
+ It provides general information about the laundry service and directs users to other sections of the site.
+
+
+### User Page (user.html)
+This page, located at:
+```
+http://localhost:5173/user.html
+```
+
+It allows users to make reservations for laundry machines.
+
+### Admin Page (admin.html)
+This page, located at:
+```
+http://localhost:5173/admin.html
+```
+This page provides administrative access to all machines, sensors, and reservations.
+
+### Pricing Page (prices.html)
+The pricing information can be found at:
+```
+http://localhost:5173/prices.html
+```
+Which details the costs associated with different laundry services.
+
 
 ## Tutorials
 The following are examples of how to interact with the system through its APIs:
