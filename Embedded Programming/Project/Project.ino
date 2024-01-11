@@ -22,7 +22,7 @@ bool dataSent = false;  // Flag to send data
 DHT dht(DHTPIN, DHTTYPE);
 
 unsigned long previousMillis = 0;
-const long interval = 30000;  // Time interval in milliseconds (1 secondS)
+const long interval = 30000;  // Time interval in milliseconds
 
 void setup() {
   Serial.begin(115200);
@@ -87,7 +87,7 @@ void connectToWiFi() {
 void sendSensorData(float temperature) {
   HTTPClient http;
   //Endpoint
-  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/24";
+  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/1";
 
   // Create a JSON object using ArduinoJson
   StaticJsonDocument<200> jsonDocument;
@@ -126,7 +126,7 @@ void sendSensorData(float temperature) {
 void sendHumidityData(float humidity) {
   HTTPClient http;
 
-  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/25";
+  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/2";
 
   // Crear un objeto JSON usando ArduinoJson
   StaticJsonDocument<200> jsonDocument;
@@ -163,7 +163,7 @@ void sendHumidityData(float humidity) {
 void sendLightData(float light) {
   HTTPClient http;
 
-  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/26";
+  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/3";
 
   StaticJsonDocument<200> jsonDocument;
   jsonDocument["id"] = 3;  
@@ -201,7 +201,7 @@ void sendLightData(float light) {
 void sendLevelData(float level) {
   HTTPClient http;
 
-  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/27";
+  String serverEndpoint = "http://laundryapp.cleverapps.io/api/sensors/update/4";
 
   StaticJsonDocument<200> jsonDocument;
   jsonDocument["id"] = 4;  
