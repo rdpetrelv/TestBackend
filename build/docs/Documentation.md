@@ -4,7 +4,7 @@ The Laundry Management System is a solution designed to optimise and simplify th
 ## Project structure
 The project is divided into two repositories:
 - **Backend:** Core logic in Java with Spring Boot [View Repository](https://github.com/rdpetrelv/TestBackend).
-- **Frontend:** User interface with Vue, HTML and JavaScript. [View Repository](https://github.com/FatiGhaoui/LaundaryManagementFrontEnd.git)
+- **Frontend:** User interface with Vue, HTML and JavaScript. [View Repository](https://gitlab.emse.fr/fatima.ghaoui/laundary-application-frontend.git)
 
 ### Prerequisites
 - **Backend:**
@@ -19,7 +19,8 @@ The project is divided into two repositories:
 
 ### Backend
 ```bash
-git clone https://github.com/rdpetrelv/TestBackend
+git clone https://gitlab.emse.fr/fatima.ghaoui/laundary-application-backend.git
+
 cd TestBackend
 ./gradlew build
 ```
@@ -31,7 +32,8 @@ myPassword
 
 ### Frontend
 ```bash
-git clone https://github.com/FatiGhaoui/LaundaryManagementFrontEnd.git
+git clone https://gitlab.emse.fr/fatima.ghaoui/laundary-application-frontend.git
+
 cd LaundaryManagementFrontEnd
 npm install
 npm run dev
